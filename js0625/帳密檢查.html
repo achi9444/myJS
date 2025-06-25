@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = "admin";    //預設帳號
+        var b = "1234";   //預設密碼
+
+        var c = "admin";    //輸入帳號
+        var d = "1234";   //輸入密碼
+
+        if (c === a && d === b) {
+            console.log("帳密正確");
+        } else if (c === a && d !== b) {
+            console.log("密碼錯誤");
+        }
+        else if (c !== a && d === b) {
+            console.log("帳號錯誤");
+        } else {
+            console.log("帳密都錯");
+        }
+
+        //帳密檢測（內建帳號：admin，密碼：1234)
+        //示範版1(巢狀檢查)
+        var uid = "admin";
+        var upw = "1234";
+        //帳號正確
+        if (uid === "admin") {
+            //密碼正確
+            if (upw == "1234") {
+                console.log("帳密正確");
+            } else {
+                //密碼錯誤
+                console.log("密碼錯誤");
+            }
+        } else {
+            //帳號錯誤
+            if (upw == "1234") {
+                console.log("帳號錯誤");
+            } else {
+                //帳密都錯
+                console.log("帳密都錯");
+            }
+        }
+        //示範版2(邏輯運算子中的交集&&)
+        if ((uid == "admin") && (upw == "1234")) {
+            console.log("帳密正確");
+        } else if ((uid == "admin") && (upw != "1234")) {
+            console.log("密碼錯誤");
+        } else if ((uid != "admin") && (upw == "1234")) {
+            console.log("帳號錯誤");
+        } else if ((uid != "admin") && (upw != "1234")){
+            console.log("帳密都錯");
+        }
+
+    </script>
+</body>
+
+</html>
