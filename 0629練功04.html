@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var t1 = "1";   //全票
+        var t2 = "2"    //優待票
+        var t3 = "3";   //敬老票
+        var kind = "";  //輸入的票種
+        var num = "";   //輸入的張數
+
+        kind = prompt("請輸入票種");
+        if (kind != "1" && kind != "2" && kind != "3") {
+            alert("票種填寫錯誤");
+        }
+        else {
+            num = prompt("請輸入張數");
+            var money = 500;     //全票票價
+            if (kind === t1) {
+                console.log(`全票${num}張，票價為：${money * num}元`);
+            }
+            else if (kind === t2) {
+                console.log(`優待票${num}張，票價為：${money * 0.8 * num}元`);
+            }
+            else if (kind === t3) {
+                console.log(`敬老票${num}張，票價為：${money * 0.8 * 0.7 * num}元`);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

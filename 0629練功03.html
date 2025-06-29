@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <SCript>
+        var l1 = "甲";  //80-100
+        var l2 = "乙";  //70-79
+        var l3 = "丙";  //60-69
+        var l4 = "丁";  //0-59
+        var score = "";
+        score = prompt("請輸入分數");
+        if (score > 100 || score < 0) {
+            //限制分數區間在0-100分
+            alert("分數錯誤");
+        }
+        else if (80 <= score && score <= 100) {
+            console.log(`${score}分，${l1}等`);
+        }
+        else if (70 <= score && score <= 79) {
+            console.log(`${score}分，${l2}等`);
+        }
+        else if (60 <= score && score <= 69) {
+            console.log(`${score}分，${l3}等`);
+        }
+        else {
+            console.log(`${score}分，${l4}等`);
+        }
+    </SCript>
+</body>
+
+</html>

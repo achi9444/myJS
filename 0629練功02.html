@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var d1 = 7.35;          //用水級距1-10
+        var d2 = 9.45;          //用水級距11-30
+        var d3 = 11.55;         //用水級距31-50
+        var d4 = 12.075;        //用水級距50-
+        var use = "";           //用水度數
+        use = prompt("輸入用水度數，查詢水費");
+
+        if (1 <= use && use <= 10) {
+            console.log(Math.floor(use * d1) + "元");
+        }
+        else if (11 <= use && use <= 30) {
+            console.log(Math.floor(use * d2) + "元");
+        }
+        else if (31 <= use && use <= 50) {
+            console.log(Math.floor(use * d3) + "元");
+        }
+        else {
+            console.log(Math.floor(use * d4) + "元");
+        }
+
+
+    </script>
+</body>
+
+</html>
