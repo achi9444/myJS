@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //錯了
+        var score = 61;
+
+        if (score >= 60 && score <= 100) {
+            console.log(`${score}分，及格`);
+        } else if (score < 60 && score >= 0) {
+            console.log(`${score}分，不及格`);
+        } else if (score < 0 || score > 100) {
+            console.log("輸入錯誤");
+        }
+
+
+
+        // 示範版(有效分數範圍0-100)
+        //先看有沒有在範圍內，沒有後面就不用再辨識
+        var score = -11;
+        if (score > 100 || score < 0) {
+            alert("分數錯誤")
+        } else {
+            if (score >= 60) {
+                console.log(`${score}分，及格`);
+            }
+            else {
+                console.log(`${score}分，不及格`);
+            }
+        }
+    </script>
+</body>
+
+</html>

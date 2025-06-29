@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //奇偶數檢查僅限整數
+        var a=13;
+
+        if(a%2===0){
+            console.log(`${a}為偶數`);
+        }else{
+            console.log(`${a}為奇數`);
+        }
+
+
+        //方法2：把重覆與不重複的部分獨立出來處理
+        var a=10;
+        var result="偶數";
+        if(a%2!=0){
+            //指派(給值)
+            result="奇數";
+        }
+        console.log(`${a}是${result}`)
+    
+    </script>
+</body>
+</html>
