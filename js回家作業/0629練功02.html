@@ -27,9 +27,24 @@
         }
         else {
             console.log(Math.floor(use * d4) + "元");
+        } //可能會有-的度數，所以還是要+判斷
+
+        //老師版
+        var water = 8;
+        var price = 0;
+        if (water >= 1 && water <= 10) {
+            price = 7.35;
+        } else if (water >= 11 && water <= 30) {
+            price = 9.45;
+        } else if (water >= 31 && water <= 50) {
+            price = 11.55;
+        } else if (water > 50) {
+            price = 12.075;
+        } else {
+            console.log(`度數有誤`);
         }
-
-
+        console.log(`用水度數：${water},每度為：${price},實付水費為：${Math.round(water * price)}`);
+        //Math.round=四捨五入
     </script>
 </body>
 

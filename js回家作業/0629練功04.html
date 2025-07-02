@@ -33,6 +33,34 @@
             }
         }
 
+        //老師版
+        //票較種類
+        var ticketType = 0;      //票價種類
+        var ticketPrice = 0;     //票價
+        var ticketName = "";     //票名
+        var ticketNum = 3;       //張數
+        var errFlag = "N"        //存放是否錯誤(識別變數)
+        switch (ticketType) {
+            default:
+                console.log(`票種輸入錯誤`);
+                errFlag = "Y";
+                break;
+            case 1: //全票
+                ticketPrice = 500;
+                ticketName = "全票";
+                break;
+            case 2: //優待票
+                ticketPrice = 500 * 0.8;
+                ticketName = "優待票";
+                break;
+            case 3: //敬老票
+                ticketPrice = 500 * 0.8 * 0.7;
+                ticketName = "敬老票";
+                break;
+        }
+        if (errFlag == "N") {
+            console.log(`${ticketName}${ticketNum}張，票價為${ticketPrice * ticketNum}`);
+        }
     </script>
 </body>
 

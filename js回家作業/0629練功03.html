@@ -31,6 +31,30 @@
         else {
             console.log(`${score}分，${l4}等`);
         }
+        
+        //老師版
+        var intScore = 30;  //int 標示整數
+        var strLevel = "";  //str 標示字串
+        if (intScore > 100 || intScore < 0) {
+            //限制分數區間在0-100分
+            console.log("分數錯誤");
+        } else {
+            if (intScore >= 80 && intScore <= 100) {
+                strLevel = "甲";
+                // console.log(`分數：${intScore}=>甲等`);
+            } else if (intScore >= 70 && intScore <= 79) {
+                strLevel = "乙";
+                // console.log(`分數：${intScore}=>乙等`);
+            } else if (intScore >= 60 && intScore <= 69) {
+                strLevel = "丙";
+                // console.log(`分數：${intScore}=>丙等`);
+            } else {
+                strLevel = "丁";
+                // console.log(`分數：${intScore}=>丁等`);
+            }
+            console.log(`分數：${intScore}=>${strLevel}`);
+        }
+
     </SCript>
 </body>
 
