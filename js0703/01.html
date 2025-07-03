@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1-10的總和
+        /*
+        累計 s=s+i
+        s=0
+        i=1 =>s=0+1=1
+        i=2 =>s=1+2=3
+        i=3 =>s=3+3=6
+        i=4 =>s=6+4=10
+        */
+        var s = 0;
+        for (var i = 1; i <= 10; i++) {
+            s = s + i;
+        }
+        document.write("1+2+3+...+10=" + s + "<br><hr>");
+
+        //統計出1-100之間的奇數和
+        //13579
+
+        var s = 0; //前面有定義過s變數，若要重新使用可直接歸零
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 1) {
+                s = s + i;
+            }
+        }
+        document.write("1-100的奇數和為" + s + "<br><hr>");
+
+        //寫法2：等差為二
+        var s1 = 0;
+        for (var i = 1; i <= 100; i = i + 2) {
+            s1 = s1 + i;
+        }
+        document.write(`1-100的奇數和=${s1}<br><hr>`);
+
+
+
+        //統計出100-1之間的偶數和
+        //檢查每個值是否為偶數
+        var s = 0;
+        for (var i = 100; i >= 1; i--) {
+            if (i % 2 == 0) {
+                s = s + i;
+            }
+        }
+        document.write("1-100的偶數和為" + s + "<br><hr>");
+
+        //寫法2：等差為二
+        var s1 = 0;
+        for (var i = 100; i >= 2; i = i - 2) {
+            s1 = s1 + i;
+        }
+        document.write(`1-100的奇數和=${s1}<br><hr>`);
+
+        //統計出1-100之間的3的倍數同時也是5的倍數和與列出數字
+        //15.30.45.60
+
+        //取得最後一個值(同時是3跟5的倍數)
+        var endValue = 0;
+        for (var i = 100; i >= 1; i--) {
+            if (i % 3 == 0) {         //檢查是否為3的倍數
+                if (i % 5 == 0) {     //檢查是否為5的倍數
+                    endValue = i;     //找到最後一個值
+                    break;            //結束迴圈-只能用在迴圈或switch，單獨的if不行
+                }
+            }
+        }
+        document.write(endValue + "<br><hr>");
+
+        //邏輯運算子
+        var s = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                s = s + i;
+                document.write("1-100之間的3的倍數同時也是5的倍數為" + i + "," + "<br>");
+            }
+        }
+        document.write("1-100之間的3的倍數同時也是5的倍數和為" + s + "<br><hr>");
+
+        //+起來
+        var s5 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                s5 = s5 + i;
+                document.write(i);
+                if (i == endValue) {
+                    document.write("=");
+                    break;  //因為已經找到最後一個值，所以結束迴圈
+                } else {
+                    document.write("+");
+                }
+
+            }
+        }
+        document.write(s5 + "<br><hr>");
+
+
+
+        //寫法2：巢狀檢查
+        var s2 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {         //檢查是否為3的倍數
+                if (i % 5 == 0) {     //檢查是否為5的倍數
+                    s2 = s2 + i;
+                    document.write(i + ",");
+                }
+            }
+        }
+        document.write("總和為" + s + "<br><hr>");
+
+
+
+
+        var s2 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {         //檢查是否為3的倍數
+                if (i % 5 == 0) {     //檢查是否為5的倍數
+                    s2 = s2 + i;
+                    if (i == endValue) {
+                        document.write(i + "=");
+                    } else {
+                        document.write(i + "+");
+                    }
+
+                }
+            }
+        }
+        document.write(s2 + "<br><hr>");
+
+
+    </script>
+</body>
+
+</html>
