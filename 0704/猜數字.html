@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>亂數猜數字 -Math.random</h2>
+
+    <label for="n">猜亂數</label>
+    <input type="number" id="n">
+    <button onclick="tot()">我猜！</button>
+    <p id="result">答案</p>
+    <script>
+
+        //取亂數(0-100)之間
+        var rd = Math.random() * 100;    //回傳0......99
+
+        console.log(Math.floor(rd) + 1)
+        function tot() {
+                //取得數值1的位置的內容
+                var n = document.getElementById("n");
+            }
+        for (var i = 1; i <= 5; i++) {
+            if(i=1){
+            if (n == rd) {
+                console.log(`答對了！亂數=${rd}`);
+            } else if(n<rd) {
+                console.log(`太小了，提示${n}-100`);
+            }else if(n>rd){
+                console.log(`太大了，提示1-${n}`);
+            }
+            
+        }}
+
+
+
+    </script>
+
+</body>
+
+</html>
