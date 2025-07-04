@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="result">結果</p>
+    <script>
+        var a = 0; //及格人數
+        var b = 0; //不及格人數
+        var c = 0; //全班總分
+        var d = 0; //全班平均
+        while (1) {
+            var score = prompt("請輸入成績");
+            if (score == "") {
+                alert("無效分數，請重新輸入");
+                continue;
+            } else if (score == -1) {
+                alert("成績填寫結束");
+                break;
+            }else if (score > 100 || score < 0) {
+                alert("無效分數，請重新輸入");
+                continue;
+            } 
+            score = Number(score)
+            if (isNaN(score)) {
+                alert("非數值，請重新輸入");
+                continue;
+            } else if (score >= 60) {
+                a = a + 1;
+                c = c + score;
+            } else if (score < 60) {
+                b = b + 1;
+                c = c + score;
+            }
+        }
+
+        if (a + b > 0) {
+            d = c / (a + b);
+        }
+        var result = document.getElementById("result");
+        result.innerHTML = `
+        及格人數${a}<br>
+        不及格人數${b}<br>
+        全班總分${c}<br>
+        全班平均${d.toFixed(2)}
+        `;
+
+
+
+    </script>
+</body>
+
+</html>
