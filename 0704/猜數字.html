@@ -10,32 +10,49 @@
 <body>
     <h2>亂數猜數字 -Math.random</h2>
 
-    <label for="n">猜亂數</label>
-    <input type="number" id="n">
-    <button onclick="tot()">我猜！</button>
-    <p id="result">答案</p>
+    <p id="result">結果</p>
     <script>
 
         //取亂數(0-100)之間
         var rd = Math.random() * 100;    //回傳0......99
+        console.log(Math.floor(rd) + 1)  //取亂數的整數(但顯示出來就被偷看了xD)
+        var x = (Math.floor(rd) + 1)     //放亂數的整數數值
+        var max = 100;                   //最大數值預設100
+        var min = 1;                     //最小數值預設1
 
-        console.log(Math.floor(rd) + 1)
-        function tot() {
-                //取得數值1的位置的內容
-                var n = document.getElementById("n");
+        while (1) {
+            var n = prompt("猜數字！！");
+            if (n == null) {                //按取消
+                alert("已取消");
+                break;
+            } else if (n == "") {           //空白
+                alert("請勿空白");
+                continue;
             }
-        for (var i = 1; i <= 5; i++) {
-            if(i=1){
-            if (n == rd) {
-                console.log(`答對了！亂數=${rd}`);
-            } else if(n<rd) {
-                console.log(`太小了，提示${n}-100`);
-            }else if(n>rd){
-                console.log(`太大了，提示1-${n}`);
+            n = Number(n);                  //轉成數字
+            if (isNaN(n)) {                 //判斷是不是數字
+                alert("非數值，請重新輸入");
+                continue;
+            } else if(n>100||n<1){          //不可以超出範圍
+                alert("非有效範圍，請重新輸入");
+                continue;
             }
-            
-        }}
+            else if (n == x) {
+                alert(`猜對了`);
+                var result = document.getElementById("result");     //抓result的位子
+                result.innerHTML = `亂數為${x}，但沒有獎品~~~`;       //把result變成`xxxx`
+                break;
+            } else if (n < x) {
+                alert(`太小了(提示：${n}-${max})`);
+                min = n;
+                continue;
+            } else if (n > x) {
+                alert(`太大了(提示：${min}-${n})`);
+                max = n;
+                continue;
+            }
 
+        }
 
 
     </script>
