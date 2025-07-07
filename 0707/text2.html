@@ -12,11 +12,17 @@
 
     <script>
         arr1 = [5, 60, 3, 90, 33, 1, 100];
+        max = arr1[""];
+        min = arr1[""];
         // 方法1：for
         for (let i = 0; i < arr1.length; i++) {
-            if(arr1[i]>arr1[i+1]){
-            console.log(arr1[i]);
-        }
+            if (arr1[i] > arr1[i + 1]) {
+                max = arr1[i];
+            }
+            if (arr1[i] < arr1[i + 1]) {
+                min = arr1[i];
+            }
+            
         }
 
         // // 方法2：for of  (for(let變數of陣列名稱){})
