@@ -40,22 +40,18 @@
             // 大樂透
 
             let arr2 = [];
-            let arrSpecial = [];
-            let rd4 = Math.floor(Math.random() * 49) + 1;
 
             for (let i = 0; arr2.length < 6; i++) {
                 let rd3 = Math.floor(Math.random() * 49) + 1;
                 if (arr2.indexOf(rd3) === -1) {
                     arr2.push(rd3);
-                    arrSpecial.push(rd3);
                 }
             }
-            arrSpecial.push(rd4);
-            console.log(arrSpecial);  //未排序，特別號在最後
+            console.log(arr2);  //未排序，特別號在最後
             arr2.sort((a, b) => {
                 return a - b;
             })
-            console.log(`排序後普通號：${arr2}，特別號：${rd4}`);  //排序後
+            console.log(`排序後：${arr2}`);  //排序後
         } else if (kind === "3") {
             // 今彩
             let arr3 = [];

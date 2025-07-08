@@ -37,7 +37,7 @@
         function btnClick() {
             count++;
             txtNo = document.getElementById("txtNo");
-
+            let keyNumber =parseInt(txtNo.value);
             if (isNaN(keyNumber)) {         //檢查是否非數字
                 alert(`非數字，請重新輸入`);
                 txtNo.focus();
@@ -48,7 +48,6 @@
                 txtNo.focus();
                 return;
             }
-            let keyNumber = txtNo.value;
             //檢查是否結束遊戲
             if (keyNumber == -1) {
                 return;
