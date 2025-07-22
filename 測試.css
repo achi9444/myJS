@@ -1,0 +1,68 @@
+body {
+  background: url('red-brick-texture.jpg') center/cover;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* 工業櫃子感的卡片 */
+.product-card {
+  width: 300px;
+  padding: 20px;
+  background: #2e2e2e;
+  border: 2px solid #555;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  margin: 20px auto;
+  position: relative;
+}
+
+/* 商品圖 */
+.product-image img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* 鋼印 TESTED */
+.stamp {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2em;
+  color: rgba(255,255,255,0.7);
+  border: 2px solid rgba(255,255,255,0.7);
+  padding: 4px 10px;
+  border-radius: 3px;
+  transform: rotate(-10deg);
+  text-transform: uppercase;
+  font-weight: bold;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+/* 價格 */
+.price {
+  display: block;
+  margin: 15px 0;
+  font-size: 1.4em;
+  color: #D5140B;  /* 紅磚主色 */
+}
+
+/* 加入購物車按鈕 */
+.add-cart {
+  background-color: #D5140B;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.add-cart:hover {
+  background-color: #0074D9; /* 電藍 或 #FF8C42 亮橘 */
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
