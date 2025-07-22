@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let lotto1 = "1"; //威力彩
+        let lotto2 = "2"; //大樂透
+        let lotto3 = "3"; //今彩
+        let kind = "";    //輸入的種類
+
+        kind = prompt("1.威力彩\n2.大樂透\n3.今彩\n請輸入購買的樂透種類");
+        if (kind != "1" && kind != "2" && kind != "3") {
+            alert("填寫錯誤");
+        } else if (kind === "1") {
+            // 威力彩
+            let arr1 = [];
+            let arrCool = [];
+            let rd2 = Math.floor(Math.random() * 8) + 1;
+            for (let i = 0; arr1.length < 6; i++) {
+                let rd1 = Math.floor(Math.random() * 38) + 1;
+                if (arr1.indexOf(rd1) === -1) {
+                    arr1.push(rd1);
+                    arrCool.push(rd1);
+                }
+            }
+            arrCool.push(rd2);
+            console.log(arrCool);  //未排序，特別號在最後
+            arr1.sort((a, b) => {
+                return a - b;
+            })
+            console.log(`排序後普通號：${arr1}，特別號：${rd2}`);  //排序
+        } else if (kind === "2") {
+            // 大樂透
+
+            let arr2 = [];
+            for (let i = 0; arr2.length < 6; i++) {
+                let rd3 = Math.floor(Math.random() * 49) + 1;
+                if (arr2.indexOf(rd3) === -1) {
+                    arr2.push(rd3);
+                }
+            }
+            console.log(arr2);  //未排序，特別號在最後
+            arr2.sort((a, b) => {
+                return a - b;
+            })
+            console.log(`排序後：${arr2}`);  //排序後
+        } else if (kind === "3") {
+            // 今彩
+            let arr3 = [];
+
+            for (let i = 0; arr3.length < 5; i++) {
+                let rd5 = Math.floor(Math.random() * 39) + 1;
+                if (arr3.indexOf(rd5) === -1) {
+                    arr3.push(rd5);
+                }
+            }
+            console.log(arr3);
+            arr3.sort((a, b) => {
+                return a - b;
+            })
+            console.log(`排序後：${arr3}`);
+        }
+    </script>
+</body>
+
+</html>

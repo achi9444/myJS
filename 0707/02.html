@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>陣列常用的方法</h2>
+    <hr>
+    <script>
+        // 建立一個陣列
+        let arr1 = [10, 200, 30];
+        console.log("尚未排序前"+arr1);
+
+
+        //遞增排序
+        //使用箭頭函式寫法
+        arr1.sort((a, b) => {
+            return a - b;
+        })
+        console.log("遞增排序後" + arr1);
+        //遞減排序
+        arr1.sort((a, b) => {
+            return b - a;
+        })
+        console.log("遞減排序後" + arr1);
+
+    </script>
+
+</body>
+
+</html>

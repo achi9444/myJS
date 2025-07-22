@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>找出陣列中的奇數值</h2>
+    <hr>
+    <script>
+        let arr1 = [1, 6, 7, 100, 234];
+
+        // for
+        let arr2 = [];
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] % 2 == 1) {
+                arr2.push(arr1[i]);
+                // console.log(`找到奇數${arr1[i]}，在第${i + 1}個位置`);  //表達給使用者看要+1，因為陣列從0開始
+                // continue;
+            }
+        }
+        console.log(arr2);
+
+        // map{此題不適合}
+        // let arr3 = arr1.map((n) => {
+        //     if (n % 2 != 0) {
+        //         return n;
+        //     }
+        // })
+        // console.log(arr3);
+
+        // filter(只留下符合條件的元素)
+        console.log(arr1);
+        let arr3 = arr1.filter((n) => {
+            if (n % 2 !== 0) {
+                return true;    //奇數被保留
+            }
+        })
+        console.log(arr3);
+
+        // 簡化版
+        let arr4 = arr1.filter((n) => {
+            return n % 2 !== 0;    //奇數被保留
+        })
+        console.log(arr4);
+
+        // 再簡化版
+        let arr5 = arr1.filter((n) => n % 2 !== 0)
+        console.log(arr5);
+
+        // 找出>=100的值
+        let arr6 = arr1.filter((n) => {
+            if (n >= 100) {
+                return true;    //奇數被保留
+            }
+            return false;
+        })
+        console.log(arr6);
+
+        let arr7 = arr1.filter((n) => n >= 100)
+        console.log(arr7);
+    </script>
+</body>
+
+</html>
