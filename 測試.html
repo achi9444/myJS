@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="測試.css">
+</head>
+
+<body>
+    <div class="product-card">
+        <div class="product-image">
+            <img src="ps4.jpg" alt="PS4 Slim">
+            <div class="stamp">TESTED</div>
+        </div>
+        <div class="product-info">
+            <span class="price">$189.99</span>
+            <button class="add-cart">ADD TO CART</button>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.querySelector('.add-cart');
+        btn.addEventListener('click', () => {
+            btn.textContent = 'ADDED!';
+            btn.style.backgroundColor = '#FF8C42'; // 點擊後變橘
+            setTimeout(() => {
+                btn.textContent = 'ADD TO CART';
+                btn.style.backgroundColor = '#D5140B';
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>

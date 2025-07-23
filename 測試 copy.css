@@ -1,0 +1,39 @@
+body {
+  background: url('brick-texture.jpg') no-repeat center center / cover;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  margin: 0;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  padding: 40px;
+  border: 2px solid #d5140b; /* 磚紅 */
+  border-radius: 20px;
+  text-align: center;
+}
+
+.cta {
+  background-color: #d5140b; /* 紅磚 */
+  border: 2px solid #6c2e1a;
+  padding: 12px 24px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #ff6a00; /* 現代感橘 */
+  box-shadow: 0 0 15px #ff6a00, 0 0 5px #ff6a00 inset;
+}
