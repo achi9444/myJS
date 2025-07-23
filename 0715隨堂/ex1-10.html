@@ -51,6 +51,113 @@
         }
         stars(n);
 
+        // 題目3-老師版
+        function stars(n) {
+            let result = "";
+            for (let i = 1; i <= n; i++) {
+                result += "*";
+
+            } console.log(result);
+        }
+        stars(3);
+
+        // 題目4：寫一個函式 isUpperCase ，檢查第一個字母是否為大寫
+        // 使用轉大寫函式=>toUpperCase()
+        // 結果：
+
+        // console.log(isUpperCase("ABCD")); 		// returns true
+        // console.log(isUpperCase("")); 			// returns false
+        // console.log(isUpperCase("aBCD"));		// returns false
+
+
+        function isUpperCase(str) {
+            // 檢查是否有資料 (trim()清除空白)
+            if (str.trim().length == 0) {
+                return false;
+            }
+            // if (str[0] === str[0].toUpperCase()) { 
+            //     return true;
+            // }else{
+            //     return false;
+            // }
+            return str[0] === str[0].toUpperCase() // 上面的簡化版
+
+            // 方法2：使用迴圈處理
+            let UpperCase = false;
+            str = str.trim();
+            for (let i = 0; i < str.length; i++) {
+                if (str[0] === str[0].toUpperCase()) {
+                    UpperCase = true;
+                    break;
+                }
+            }
+            return UpperCase;
+        }
+        console.log(isUpperCase("ABCD"));
+        console.log(isUpperCase(""));
+        console.log(isUpperCase("aBCD"));
+
+        // 題目5：寫一個函式 isAllUpperCase，檢查所有字母是否為大寫
+        // 結果：
+        // console.log(isAllUpperCase("ABCD")); 			// returns true
+        // console.log(isAllUpperCase("")); 				// returns false
+        // console.log(isAllUpperCase("ABCDEFGHIJKLm")); 	// returns false
+        function isAllUpperCase(str) {
+            // 檢查是否有資料 (trim()清除空白)
+            if (str.trim().length == 0) {
+                return false;
+            }
+            // 預設所有字母都是大寫
+            let AllUpperCase = true;
+            // 逐一檢查是否為大寫
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === str[i].toUpperCase()) {
+                    // 大寫=不處理
+                } else {
+                    return false;
+                    // 小寫=結束
+                }
+            } return true;
+        }
+        // 寫法2
+        function isAllUpperCase(str) {
+            // 檢查是否有資料 (trim()清除空白)
+            if (str.trim().length == 0) {
+                return false;
+            }
+            //整個字串轉大寫後比對
+            // if (str !== str.toUpperCase()) {
+            //     return false;
+            // } return true;
+            // 簡化
+            return str === str.toUpperCase()
+        }
+        console.log(isAllUpperCase("ABCD"));
+        console.log(isAllUpperCase(""));
+        console.log(isAllUpperCase("ABCDEFGHIJKLm"));
+
+        // 題目6：寫一個函式 position，檢查第一個字母大寫的內容與位置，找不到為-1
+        // 結果：
+
+        // console.log(position("abcd")); 	// prints -1
+        // console.log(position("AbcD"));		// prints A 0
+        // console.log(position("abCD")); 	// prints C 2
+
+
+        function position(str) {
+            // 檢查是否有資料 (trim()清除空白)
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === str[i].toUpperCase()) {
+                    return str[i] + " " + i;
+                }
+            }
+            return -1;
+        }
+
+        console.log(position("abcd"));
+        console.log(position("AbcD"));
+        console.log(position("abCD"));
+
         // 題目7：寫一個函式 findSmallCount，找出陣列中的值，比第2個參數小的總個數
         // 結果：
         // console.log(findSmallCount([1, 2, 3], 2)); 			// returns 1
@@ -75,7 +182,7 @@
         // console.log(findSmallerTotal([3, 2, 5, 8, 7], 0)); 		// returns 0
         function findSmallerTotal(arr, num) {
             let sum = 0;
-            for (let i = 0; i <= arr.length; i++) {
+            for (let i = 0; i < arr.length; i++) {
                 if (arr[i] < num) {
                     sum = sum + arr[i]
                 }
@@ -91,7 +198,7 @@
         // console.log(findAllSmall([1, 3, 5, 4, 2], 4)); 	// returns [1, 3, 2]
         function findAllSmall(arr, num) {
             let newArr = [];
-            for (let i = 0; i <= arr.length; i++) {
+            for (let i = 0; i < arr.length; i++) {
                 if (arr[i] < num) {
                     newArr.push(arr[i]);
                 }
